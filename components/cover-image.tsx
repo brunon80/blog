@@ -1,5 +1,5 @@
 import cn from 'classnames'
-import Image from 'next/image'
+import Image, { ImageLoader, ImageLoaderProps } from 'next/image'
 import Link from 'next/link'
 
 interface Props {
@@ -12,9 +12,15 @@ interface Props {
   slug?: string
 }
 
+const contentfulImageLoader: ImageLoader = ({ src, width }: ImageLoaderProps) => {
+  return `${src}?w=${width}`
+}
+
+
 export default function CoverImage({ title, coverImage, slug }: Props) {
   const image = (
     <Image
+      loader={contentfulImageLoader}
       width={2000}
       height={1000}
       alt={`Cover Image for ${title}`}

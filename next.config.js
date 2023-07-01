@@ -16,5 +16,11 @@ module.exports = {
       'secure.gravatar.com',
       'rolim-blog.000webhostapp.com',
     ],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "rolim-blog.000webhostapp.com",
+      },
+    ],
   },
 }
