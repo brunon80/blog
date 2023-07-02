@@ -1,5 +1,5 @@
 import cn from 'classnames'
-import Image, { ImageLoader, ImageLoaderProps } from "next/legacy/image"
+import Image, { ImageLoader, ImageLoaderProps } from "next/image"
 import Link from 'next/link'
 
 interface Props {
@@ -20,7 +20,6 @@ const contentfulImageLoader: ImageLoader = ({ src, width }: ImageLoaderProps) =>
 export default function CoverImage({ title, coverImage, slug }: Props) {
   const image = (
     <Image
-      loader={contentfulImageLoader}
       width={2000}
       height={1000}
       alt={`Cover Image for ${title}`}
@@ -28,7 +27,10 @@ export default function CoverImage({ title, coverImage, slug }: Props) {
       className={cn('shadow-small', {
         'hover:shadow-medium transition-shadow duration-200': slug,
       })}
-    />
+      style={{
+        maxWidth: "100%",
+        height: "auto"
+      }} />
   )
   return (
     <div className="sm:mx-0">
