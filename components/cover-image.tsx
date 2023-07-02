@@ -1,5 +1,5 @@
 import cn from 'classnames'
-import Image, { ImageLoader, ImageLoaderProps } from 'next/image'
+import Image, { ImageLoader, ImageLoaderProps } from "next/legacy/image"
 import Link from 'next/link'
 
 interface Props {
