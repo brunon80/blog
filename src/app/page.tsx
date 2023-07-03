@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import { GetStaticProps } from 'next'
 import Container from '../components/container'
 import MoreStories from '../components/more-stories'
@@ -17,9 +16,6 @@ export default async function Index() {
 
   return (
     <Layout preview={false}>
-      <Head>
-        <title>{`Next.js Blog Example with ${CMS_NAME}`}</title>
-      </Head>
       <Container>
         <Intro />
         {heroPost && (
